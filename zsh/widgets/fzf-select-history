@@ -1,0 +1,10 @@
+function fzf-select-history() {
+  local entry
+
+  entry=$(history -n -r 1 | fzf --no-sort)
+
+  if [ -n "${entry}" ]; then
+    BUFFER="${entry}"
+    CURSOR=$#BUFFER
+  fi
+}

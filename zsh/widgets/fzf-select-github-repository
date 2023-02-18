@@ -1,0 +1,13 @@
+function fzf-select-github-repository() {
+  local github_directory="$HOME/Developer/GitHub"
+  local repository
+
+  repository=$(find -L "${github_directory}" -mindepth 2 -maxdepth 2 -type d \
+      | sed -e "s|${github_directory}||" \
+      | fzf)
+
+  if [ -n "${repository}" ]; then
+    BUFFER="cd ${github_directory}/${repository}"
+    zle accept-line
+  fi
+}

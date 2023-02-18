@@ -1,0 +1,33 @@
+[user]
+	name = John Doe
+	email = johndoe@example.com
+[alias]
+	aliases = !git config --get-regexp alias
+	a = add
+	b = branch
+	c = commit
+	co = checkout
+	d = diff
+	f = fetch
+	g = grep
+	l = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+	s = status
+	sw = switch
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[pull]
+	ff = only
+[push]
+	default = simple
+	followTags = true
+[rebase]
+	autostash = true
+	autosquash = true
+[grep]
+	lineNumber = true
+[include]
+	path = ~/.config/git/config.local
