@@ -157,7 +157,9 @@ TOOLS=( \
 
 for i in "${TOOLS[@]}"; do
   if type "${i}" > /dev/null 2>&1 ; then
-    echo -e "${CYAN}INFO: ${i} is not found. Please install it manually${NC}"
+    echo -e "${CYAN}INFO: ${i} is installed.${NC}"
+  else
+    echo -e "${CYAN}INFO: ${i} is not found. Please install it manually.${NC}"
   fi
 done
 
