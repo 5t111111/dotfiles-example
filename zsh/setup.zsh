@@ -9,9 +9,10 @@ pushd "$(dirname $0)" > /dev/null
 SCRIPT_PATH="$(pwd -P)"
 
 cat << EOS
-================================================================================
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 Setting up XDG Base Directory
-================================================================================
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 EOS
 
 if [ ! -d "${XDG_CONFIG_HOME:=$HOME/.config}" ] ; then
@@ -21,9 +22,10 @@ else
 fi
 
 cat << EOS
-================================================================================
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 Creating symlink to zsh config
-================================================================================
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 EOS
 
 if [ -e "${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}" ] && [ ! -L "${ZDOTDIR}" ] ; then
@@ -39,9 +41,10 @@ else
 fi
 
 cat << EOS
-================================================================================
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 Creating symlink of .zshenv
-================================================================================
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 EOS
 
 if [ -e "${ZSHENV_PATH:=$HOME/.zshenv}" ] && [ ! -L "${ZSHENV_PATH}" ]; then
@@ -57,9 +60,10 @@ else
 fi
 
 cat << EOS
-================================================================================
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 ZSH setup complete!
-================================================================================
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 Recommended way to configure your local specific configuration is
 adding settings in [${ZDOTDIR}/local.zshrc]
 instead of [${ZDOTDIR}/.zshrc].

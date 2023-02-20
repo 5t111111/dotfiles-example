@@ -22,6 +22,6 @@ dotfiles のサンプルです。
 
 ## TIPS
 
-Codespaces の場合に挙動を変えたい場合は、環境変数 `CODESPACES` によって条件分岐させると良いです。
+Dev Container や Codespaces の場合に挙動を変えたい場合は、それらの環境で自動的に設定される環境変数によって条件分岐させると良いです。
 
-参考: https://github.com/5t111111/dotfiles-example/blob/6b36089c1933d0b2c62a4ee97f510d5a3961734d/zsh/hooks/starship.zsh#L10-L16
+参考: https://github.com/5t111111/dotfiles-example/blob/main/zsh/hooks/starship.zsh#L10

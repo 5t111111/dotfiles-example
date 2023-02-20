@@ -147,6 +147,47 @@ zsh "${SCRIPT_PATH}/zsh/setup.zsh"
 cat << EOS
 
 ================================================================================
+Create symlinks for uncategorized dotfiles
+================================================================================
+EOS
+
+FILES=( \
+  .ideavimrc \
+)
+
+# case $OS in
+#   'Linux')
+#     ;;
+#   'Mac')
+#     MAC_ONLY_FILES=( \
+#     )
+#     FILES=("${FILES[@]}" "${MAC_ONLY_FILES[@]}")
+#     ;;
+#   *)
+#     ;;
+# esac
+
+for i in "${FILES[@]}"; do
+  if [ -e "${HOME}/${i}" ] && [ ! -L "${HOME}/${i}" ] ; then
+    echo -e "${RED}ERROR: Failed to create symlink [${i}] because [${HOME}/${i}] already exists.${NC}"
+    echo -e "${RED}ERROR: Delete [${HOME}/${i}] manually if you really want to proceed.${NC}"
+    continue
+  fi
+
+  if [ -e "${HOME}/${i}" ] && [ -L "${HOME}/${i}" ] ; then
+    rm "${HOME}/${i}"
+    echo -e "${BLUE}WARN: Existing symlink [${HOME}/${i}] is deleted.${NC}"
+  fi
+
+  ln -s "${SCRIPT_PATH}/${i}" "${HOME}/${i}"
+  echo -e "${CYAN}INFO: Symlink [${HOME}/${i}] is created.${NC}"
+done
+
+# ==============================================================================
+
+cat << EOS
+
+================================================================================
 Check required command line tools
 ================================================================================
 EOS
