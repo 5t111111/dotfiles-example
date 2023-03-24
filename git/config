@@ -1,6 +1,6 @@
 [user]
 	name = John Doe
-	email = johndoe@example.com
+	email = xxxxxx+johndoe@users.noreply.github.com
 [alias]
 	aliases = !git config --get-regexp alias
 	a = add
