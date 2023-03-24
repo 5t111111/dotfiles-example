@@ -46,9 +46,9 @@ zstyle ':completion:*' verbose yes
   local widgets_dir="${ZDOTDIR}/widgets"
   fpath=(${widgets_dir} ${fpath})
 
-  for widgets_file in `ls ${widgets_dir}`; do
-    autoload -U ${widgets_file}
-    zle -N ${widgets_file}
+  for widget_file in `ls ${widgets_dir}`; do
+    autoload -U ${widget_file}
+    zle -N ${widget_file}
   done
 }
 
@@ -66,8 +66,8 @@ zstyle ':completion:*' verbose yes
 () {
   local bindkeys_dir="${ZDOTDIR}/bindkeys"
 
-  for bindkeys_file in `ls ${bindkeys_dir}/*.zsh | xargs -n 1 basename`; do
-    source ${bindkeys_dir}/${bindkeys_file}
+  for bindkey_file in `ls ${bindkeys_dir}/*.zsh | xargs -n 1 basename`; do
+    source ${bindkeys_dir}/${bindkey_file}
   done
 }
 
@@ -77,8 +77,8 @@ zstyle ':completion:*' verbose yes
 () {
   local aliases_dir="${ZDOTDIR}/aliases"
 
-  for aliases_file in `ls ${aliases_dir}/*.zsh | xargs -n 1 basename`; do
-    source ${aliases_dir}/${aliases_file}
+  for alias_file in `ls ${aliases_dir}/*.zsh | xargs -n 1 basename`; do
+    source ${aliases_dir}/${alias_file}
   done
 }
 
@@ -106,8 +106,8 @@ zstyle ':completion:*' verbose yes
 () {
   local hooks_dir="${ZDOTDIR}/hooks"
 
-  for hooks_file in `ls ${hooks_dir}`; do
-    source ${hooks_dir}/${hooks_file}
+  for hook_file in `ls ${hooks_dir}`; do
+    source ${hooks_dir}/${hook_file}
   done
 }
 
